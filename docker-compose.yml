@@ -1,5 +1,12 @@
 version: '3'
 services:
+  api:
+    image: 'go-todolist:latest'
+    tty: true
+    ports:
+      - '8000:8000'
+    container_name: go-todolist-api
+
   mongo:
     image: 'mongo:4.2.0'
     ports:
