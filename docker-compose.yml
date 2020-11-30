@@ -1,10 +1,7 @@
 version: '3'
 services:
-  # MySQL
-  mysql:
-    image: 'mysql'
+  mongo:
+    image: 'mongo:4.2.0'
     ports:
-      - '3306:3306'
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-    container_name: mysql
+      - '27017:27017'
+    container_name: mongo
