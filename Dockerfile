@@ -1,12 +1,10 @@
-FROM golang:1.15-alpine AS build
-WORKDIR /go/src/app
-COPY . .
-RUN go get -d -v ./...
-RUN go install -v ./...
+FROM golang:1.15-alpine
 
 WORKDIR /app
-COPY . /app
-RUN go build -o main .
+ADD . /app
 
-EXPOSE 8000
+RUN apk add git \
+  && go get -d -v ./... \
+  && go build -o main .
+
 CMD ["/app/main"]

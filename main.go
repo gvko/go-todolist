@@ -11,7 +11,7 @@ import (
   "time"
 )
 
-var conn, _ = mgo.Dial("localhost")
+var conn, _ = mgo.Dial("mongo")
 var collection = conn.DB("TutDb").C("ToDo")
 
 type ToDoItem struct {
